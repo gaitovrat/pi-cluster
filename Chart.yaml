@@ -4,5 +4,5 @@ description: Raspberry Pi cluster setup
 version: 0.1.1
 dependencies:
    - name: monitoring
-     version: 0.1.1
+     version: 0.1.2
      repository: file://./charts/monitoring

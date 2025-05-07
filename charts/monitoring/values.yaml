@@ -2,7 +2,7 @@ namespace: &namespaceName monitoring
 prometheus:
   namespaceOverride: *namespaceName
   alertmanager:
-    namespaceOverride: *namespaceName
+    enabled: false
   grafana:
     namespaceOverride: *namespaceName
     adminUser: admin
