@@ -52,8 +52,13 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/grafana
               name: {{ .name }}-pv
+            - mountPath: /etc/grafana
+              name: {{ .name }}-config
       volumes:
         - name: {{ .name }}-pv
           persistentVolumeClaim:
             claimName: {{ .name }}-pvc
+        - name: {{ .name }}-config
+          configMap:
+            name: {{ .name }}-config
 {{- end }}
