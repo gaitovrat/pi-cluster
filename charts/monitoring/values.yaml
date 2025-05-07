@@ -1,5 +1,13 @@
-grafana:
-  labels:
-    app: grafana
-  name: grafana
-namespace: monitoring
+namespace: &namespaceName monitoring
+prometheus:
+  namespaceOverride: *namespaceName
+  alertmanager:
+    namespaceOverride: *namespaceName
+  grafana:
+    namespaceOverride: *namespaceName
+    adminUser: admin
+    adminPassword: admin
+  kube-state-metrics:
+    namespaceOverride: *namespaceName
+  prometheus-node-exporter:
+    namespaceOverride: *namespaceName
