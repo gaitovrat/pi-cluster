@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: {{ .Values.namespace }}
-  {{- with .Values.grafana }}
+{{- with .Values.grafana }}
   labels:
-    {{ toYaml .labels }}
+{{ toYaml .labels | indent 4}}
   name: {{ .name }}-deployment
 spec:
   selector:
     matchLabels:
-      {{ toYaml .labels }}
+{{ toYaml .labels | indent 6}}
   template:
     metadata:
       labels:
-        {{ toYaml .labels }}
+{{ toYaml .labels | indent 8}}
     spec:
       securityContext:
         fsGroup: 472
