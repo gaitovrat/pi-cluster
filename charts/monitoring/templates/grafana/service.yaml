@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: {{ .Values.namespace }}
+  {{- with .Values.grafana }}
+  name: {{ .name }}-service
+spec:
+  ports:
+    - port: 3000
+      protocol: TCP
+      targetPort: http-{{ .name }}
+  selector:
+    {{ toYaml .labels }}
+  sessionAffinity: None
+  type: ClusterIP
+{{- end }}
