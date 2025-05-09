@@ -1,0 +1,14 @@
+monitoring:
+  namespace: &monitoringNamespace monitoring
+prometheus:
+  namespaceOverride: *monitoringNamespace
+  alertmanager:
+    enabled: false
+  grafana:
+    namespaceOverride: *monitoringNamespace
+    adminUser: admin
+    adminPassword: admin
+  kube-state-metrics:
+    namespaceOverride: *monitoringNamespace
+  prometheus-node-exporter:
+    namespaceOverride: *monitoringNamespace
