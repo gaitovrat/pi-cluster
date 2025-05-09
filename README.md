@@ -1,6 +1,6 @@
 # Pi Cluster
 ## Install
 ```sh
-helm dependency build
+helm dependency update
 helm install pi-cluster .
 ```

@@ -1,0 +1,3 @@
+replicas: 1
+credentials: "encodedstring"
+hostname: "example.com"

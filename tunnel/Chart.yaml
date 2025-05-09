@@ -1,0 +1,10 @@
+apiVersion: v2
+name: tunnel
+description: Cloudflare tunnel
+version: 0.1.0
+type: application
+appVersion: "1.27"
+dependencies:
+  - name: common
+    version: 0.1.0
+    repository: file://../common
